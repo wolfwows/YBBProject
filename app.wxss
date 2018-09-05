@@ -1,0 +1,6 @@
+/**app.wxss**/
+@import "assets/styles/weui.wxss";
+
+.container {
+
+}

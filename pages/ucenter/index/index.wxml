@@ -1,0 +1,52 @@
+<!--pages/ucenter/index/index.wxml-->
+<view class="container">
+  <view class="userinfo" bindtap="bindViewTap">
+    <text class="user_sign">签到</text>
+    <view class="userinfo_avatar">
+      <image class="userinfo_avatar__inner__bg" src="../../../assets/images/avatar_bg.png" mode="cover"></image>
+      <image class="userinfo_avatar__inner" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    </view>
+    <view class="userinfo_brief">
+      <text class="userinfo_nickname">{{userInfo.nickName}}</text>
+      <!-- <view class="userinfo_member"> -->
+      <!-- <image src="../../../assets/images/icon-baton.png"></image> -->
+      <text class="userinfo_member">普通会员</text>
+      <!-- </view> -->
+    </view>
+  </view>
+  <view class="info_list info_list__hd">
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <navigator url="/pages/ucenter/integral/index" hover-class="none" class="item_inner integral_item">
+          <text class="info_list__title">我的积分</text>
+          <text class="integral_date">{{integral}}</text>
+        </navigator>
+      </view>
+      <view class="weui-flex__item">
+        <navigator url="/pages/ucenter/upmember/index" hover-class="none" class="item_inner upmember_item">
+          <text class="info_list__title">升级会员</text>
+          <text class="upmember_date">{{upmemberdate}}天后升级</text>
+        </navigator>
+      </view>
+      <view class="weui-flex__item">
+        <navigator url="/pages/ucenter/income/index" hover-class="none" class="item_inner income_item">
+          <text class="info_list__title">我的收益</text>
+          <text class="income_date">{{income}}</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class="info_list info_list__bd">
+    <view class="weui-cells">
+      <view class="weui-cell weui-cell_access" hover-class="none" wx:for="{{ items }}" wx:key="" data-path="{{ item.path }}" data-index="{{ index }}" bindtap="navigateTo">
+        <view class="weui-cell__hd info_list__icon">
+          <image src="{{ item.icon }}"></image>
+        </view>
+        <view class="weui-cell__bd info_list__title">{{ item.text }}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">
+          <!-- <text wx:if="{{ index === 2 }}">{{ item.path }}</text> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

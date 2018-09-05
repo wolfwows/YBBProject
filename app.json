@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/ucenter/index/index",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/lesson/index",
+    "pages/ucenter/signin/index",
+    "pages/ucenter/userinfo/index",
+    "pages/ucenter/integral/index",
+    "pages/ucenter/upmember/index",
+    "pages/ucenter/income/index",
+    "pages/ucenter/myorder/index",
+    "pages/ucenter/offline/index",
+    "pages/ucenter/qrcode/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#36becc",
+    "navigationBarTitleText": "中国脑力联盟",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#6b696a",
+    "selectedColor": "#36becc",
+    "borderStyle": "white",
+    "backgroundColor": "#f8f8f8",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "assets/images/index_normal.png",
+      "selectedIconPath": "assets/images/index_pressed.png",
+      "text": "主页"
+    }, {
+      "pagePath": "pages/lesson/index",
+      "iconPath": "assets/images/lesson_normal.png",
+      "selectedIconPath": "assets/images/lesson_pressed.png",
+      "text": "我的课程"
+    }, {
+      "pagePath": "pages/ucenter/index/index",
+      "iconPath": "assets/images/user_normal.png",
+      "selectedIconPath": "assets/images/user_pressed.png",
+      "text": "我的"
+    }]
+  },
+  "debug": false
+}
