@@ -32,7 +32,7 @@
 }
 .userinfo_avatar__inner__bg{
   position: absolute;
-  width:182rpx;
+  width:184rpx;
   height:142rpx;
   z-index: -1;
 }
