@@ -4,51 +4,107 @@ const app = getApp()
 
 Page({
 	data: {
-		motto: 'Hello World',
-		userInfo: {},
-		hasUserInfo: false,
-		canIUse: wx.canIUse('button.open-type.getUserInfo')
+		banner: [{
+			id: 0,
+			link: '/pages/lesson/index',
+			image_url: '/assets/images/banner1.jpg'
+		}, {
+			id: 1,
+			link: '/pages/lesson/index',
+			image_url: '/assets/images/banner2.jpg'
+		}, {
+			id: 2,
+			link: '/pages/lesson/index',
+			image_url: '/assets/images/banner3.jpg'
+		}],
+		channel: [{
+			id: 0,
+			link: '/pages/lesson/index',
+			icon_url: '/assets/images/channel1.png',
+			name: '专题'
+			}, {
+			id: 1,
+			link: '/pages/lesson/index',
+			icon_url: '/assets/images/channel2.png',
+			name: '分类'
+			}, {
+			id: 2,
+			link: '/pages/lesson/index',
+			icon_url: '/assets/images/channel3.png',
+			name: '会员'
+		}],
+		live: [{
+			id: 0,
+			link: '/pages/lesson/index',
+			images_url: '/assets/images/live1.png',
+			title: '幼儿英语训练班',
+			teacher: '黄铮',
+			teacher_desc: '全脑教育金牌讲师',
+			student_num: '152',
+			lesson_num: '9',
+			price: 48,
+			live_time: '7/26  10:25'
+		}, {
+			id: 0,
+			link: '/pages/lesson/index',
+			images_url: '/assets/images/live1.png',
+			title: '幼儿英语训练班',
+			teacher: '黄铮',
+			teacher_desc: '全脑教育金牌讲师',
+			student_num: '152',
+			lesson_num: '9',
+			price: 48,
+			live_time: '7/26  10:25'
+		}, {
+			id: 0,
+			link: '/pages/lesson/index',
+			images_url: '/assets/images/live1.png',
+			title: '幼儿英语训练班',
+			teacher: '黄铮',
+			teacher_desc: '全脑教育金牌讲师',
+			student_num: '152',
+			lesson_num: '9',
+			price: 48,
+			live_time: '7/26  10:25'
+		}],
+		lesson: [{
+			id: 0,
+			link: '/pages/lesson/index',
+			images_url: '/assets/images/lesson1.png',
+			title: '幼儿英语训练班',
+			price: 48,
+			teacher: '黄铮',
+			viewer: '152'
+		}, {
+			id: 0,
+			link: '/pages/lesson/index',
+			images_url: '/assets/images/lesson2.png',
+			title: '课外互动班',
+			price: null,
+			teacher: '黄铮',
+			viewer: '152'
+		}, {
+			id: 0,
+			link: '/pages/lesson/index',
+			images_url: '/assets/images/lesson3.png',
+			title: '国学冲刺班',
+			price: 48,
+			teacher: '黄铮',
+			viewer: '152'
+		}, {
+			id: 0,
+			link: '/pages/lesson/index',
+			images_url: '/assets/images/lesson4.png',
+			title: '奥数强化班',
+			price: null,
+			teacher: '黄铮',
+			viewer: '152'
+		}]
 	},
 	//事件处理函数
-	bindViewTap: function () {
-		wx.navigateTo({
-			url: '../logs/logs'
-		})
-	},
+
 	onLoad: function () {
-		if (app.globalData.userInfo) {
-			this.setData({
-				userInfo: app.globalData.userInfo,
-				hasUserInfo: true
-			})
-		} else if (this.data.canIUse) {
-			// 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-			// 所以此处加入 callback 以防止这种情况
-			app.userInfoReadyCallback = res => {
-				this.setData({
-					userInfo: res.userInfo,
-					hasUserInfo: true
-				})
-			}
-		} else {
-			// 在没有 open-type=getUserInfo 版本的兼容处理
-			wx.getUserInfo({
-				success: res => {
-					app.globalData.userInfo = res.userInfo
-					this.setData({
-						userInfo: res.userInfo,
-						hasUserInfo: true
-					})
-				}
-			})
-		}
+
 	},
-	getUserInfo: function (e) {
-		console.log(e)
-		app.globalData.userInfo = e.detail.userInfo
-		this.setData({
-			userInfo: e.detail.userInfo,
-			hasUserInfo: true
-		})
-	}
+
 })

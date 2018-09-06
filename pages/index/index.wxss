@@ -1,21 +1,233 @@
 /**index.wxss**/
-.userinfo {
+.swiper_box{
+  width: 100%;
+  height: 376rpx;
+}
+.slider_img{
+  width: 100%;
+  height: 376rpx;
+}
+/* 改变轮播图dot的样式 */
+/* .swiper_box .wx-swiper-dots.wx-swiper-dots-horizontal{
+     margin-bottom: 2rpx;
+}
+.swiper_box .wx-swiper-dot{
+    width:40rpx;
+    display: inline-flex;
+    height: 10rpx;
+    margin-left: 20rpx;
+    justify-content:space-between;
+}
+.swiper_box .wx-swiper-dot::before{
+    content: '';
+    flex-grow: 1;
+    background: rgba(255,255,255,0.8);
+    border-radius: 8rpx
+}
+.swiper_box .wx-swiper-dot-active::before{
+    background:rgba(244,0,0,0.8);
+} */
+.m_menu{
+  justify-content: center;
+  align-items: center;
+  background: #f4f4f4;
+}
+.item{
+  padding: 40rpx 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  background: #fff;
+  margin-bottom: 18rpx;
+}
+.item image{
+  width: 116rpx;
+  height: 116rpx;
+}
+.item text{
+  color: #919191;
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 60rpx;
+}
+.section{
+  background: #f4f4f4;
+  overflow:hidden;
+
+}
+.section_hd{
+  padding: 30rpx 20rpx;
+}
+.section_hd,.section_bd{
+  background: #fff;
+}
+.live_brand .section_bd{
+  margin-bottom: 18rpx;
+}
+.section_hd__title{
+  font-size: 34rpx;
+  color: #4f4f4f;
+  font-weight: bold;
+  line-height: 36rpx;
+  position: relative;
+  padding-left: 28rpx;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.section_hd__title::before{
+  content: "";
+  width: 6rpx;
+  background: #33c3db;
+  position: absolute;
+  left: 14rpx;
+  top: 0;
+  bottom: 0;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.section_hd__title::after{
+  content: "更多";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 28rpx;
+  color: #919191;
 }
-
-.usermotto {
-  margin-top: 200px;
+.live_brand .live_box{
+  padding: 32rpx 20rpx;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+.live_box:not(:last-of-type):after{
+  content: "";
+  height: 1rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+  position: absolute;
+  bottom: 0;
+  left: 20rpx;
+  right: 20rpx;
+}
+.live_img{
+  width: 312rpx;
+  height: 170rpx;
+  border: 1rpx solid #919191;
+}
+.live_desc{
+  flex: 1;
+  padding-left:20rpx;
+}
+.live_title,.tea_des{
+  display: block;
+}
+.live_title{
+  font-size: 34rpx;
+  color: #2e2e2e;
+  font-weight: bold;
+  line-height: 42rpx;
+}
+.tea_des{
+  font-size: 24rpx;
+  color: #959595;
+  line-height: 44rpx;
+}
+.stu_les_pri{
+  line-height: 32rpx;
+}
+.stu_les{
+  font-size: 22rpx;
+  color: #b8b8b8;
+  line-height: 32rpx;
+}
+.les_price{
+  font-size: 26rpx;
+  color: #36becc;
+  line-height: 40rpx;
+  float: right;
+}
+.live_time{
+  font-size: 24rpx;
+  color: #fdb045;
+}
+.live_time__txt{
+  font-size: 24rpx;
+  color: #959595;
+}
+.lesson_brand .section_bd{
+  width: 100%;
+  overflow: hidden;
+}
+.lesson_box{
+width:50%;
+height:auto;
+float:left;
+padding:30rpx 20rpx;
+height:auto;
+overflow:hidden;
+/* text-align:center; */
+box-sizing:border-box;
+}
+.lesson_img{
+  width: 336rpx;
+  height: 284rpx;
+}
+.lesson_box .title,.lesson_box .cost,.lesson_box .free{
+  display: block;
+}
+.lesson_box .title{
+  font-size: 24rpx;
+  color: #2e2e2e;
+  font-weight: bold;
+}
+.lesson_box .free{
+  font-size: 24rpx;
+  color: #fdb045;
+  font-weight: bold;
+  line-height: 34rpx;
+}
+.lesson_box .cost{
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color: #f85934;
+  font-weight: bold;
+  position: relative;
+  padding-left: 28rpx;
+}
+.lesson_box .cost:before{
+  content: "￥";
+  font-size: 24rpx;
+  color: #f85934;
+  font-weight: bold;
+  line-height: 34rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+.teacher_viewer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.teacher,.viewer{
+  flex:1;
+  line-height: 38rpx;
+}
+.viewer{
+  text-align: right;
+}
+.teacher image
+{
+  width: 20rpx;
+  height: 22rpx;
+  line-height: 22rpx;
+}
+.teacher text,.viewer text{
+  font-size: 22rpx;
+  color: #b8b8b8;
+  padding-left: 10rpx;
+}
+.viewer image{
+  width: 20rpx;
+  height: 16rpx;
+  line-height: 22rpx;
 }

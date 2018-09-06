@@ -1,13 +1,70 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <swiper class="swiper_box" indicator-dots="true" indicator-color="#959595" indicator-active-color="#33c3db" autoplay="true" interval="3000" duration="1000" circular="true">
+    <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}">
+      <navigator url="{{item.link}}">
+        <image class="slider_img" src="{{item.image_url}}"></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+  <view class="m_menu weui-flex">
+    <navigator class="item weui-flex__item" url="{{item.link}}" wx:for="{{channel}}" wx:key="{{item.id}}">
+      <image src="{{item.icon_url}}"></image>
+      <text>{{item.name}}</text>
+    </navigator>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="section live_brand">
+    <view class="section_hd">
+      <navigator url="../brand/brand" hover-class="none">
+        <view class="section_hd__title">直播专区</view>
+      </navigator>
+    </view>
+    <view class="section_bd">
+      <navigator wx:for="{{live}}" url="{{item.link}}" hover-class="none" wx:key="item.id" class="live_box">
+
+        <image src="{{item.images_url}}" class="live_img"></image>
+        <view class="live_desc">
+          <text class="live_title">{{item.title}}</text>
+          <text class="tea_des">{{item.teacher}}{{item.teacher_desc?'·':''}}{{item.teacher_desc}}</text>
+          <view class="stu_les_pri">
+            <text class="stu_les">{{item.student_num?item.student_num:'0'}}人学习{{item.lesson_num?'|':''}}{{item.lesson_num}}课</text>
+            <text class="les_price">{{item.price?'￥':''}}{{item.price}}</text>
+          </view>
+          <text class="live_time__txt">直播时间：</text>
+          <text class="live_time">{{item.live_time}}</text>
+        </view>
+
+      </navigator>
+    </view>
+  </view>
+  <view class="section lesson_brand">
+    <view class="section_hd">
+      <navigator url="/pages/ucenter/integral/index" hover-class="none">
+        <view class="section_hd__title">推荐课程</view>
+      </navigator>
+    </view>
+    <view class="section_bd">
+      <navigator wx:for="{{lesson}}" url="{{item.link}}" wx:key="{{item.id}}" class="lesson_box" hover-class="none">
+        <view>
+          <image src="{{item.images_url}}" class="lesson_img"></image>
+          <view>
+            <text class="title">{{item.title}}</text>
+            <!-- <text wx:if="{{item.price}}" class="cost">{{item.price}}</text>
+            <text wx:else class="free">免费</text> -->
+            <text class="{{item.price ? 'cost' : 'free'}}">{{item.price ? item.price : '免费'}}</text>
+            <view class="teacher_viewer">
+              <view class="teacher">
+                <image src="/assets/images/icon_teacher.png"></image>
+                <text>{{item.teacher}}</text>
+              </view>
+              <view class="viewer">
+                <image src="/assets/images/icon_viewer.png"></image>
+                <text>{{item.viewer}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
   </view>
 </view>
