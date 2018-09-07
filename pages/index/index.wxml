@@ -19,19 +19,22 @@
         <view class="section_hd__title">直播专区</view>
       </navigator>
     </view>
-    <view class="section_bd">
-      <navigator wx:for="{{live}}" url="{{item.link}}" hover-class="none" wx:key="item.id" class="live_box">
+    <view class="section_bd course">
+      <navigator wx:for="{{live}}" url="{{item.link}}" hover-class="none" wx:key="item.id" class="course_box live_box">
 
-        <image src="{{item.images_url}}" class="live_img"></image>
-        <view class="live_desc">
-          <text class="live_title">{{item.title}}</text>
+        <image src="{{item.images_url}}" class="course_img"></image>
+        <view class="course_desc">
+          <text class="course_title">{{item.title}}</text>
           <text class="tea_des">{{item.teacher}}{{item.teacher_desc?'·':''}}{{item.teacher_desc}}</text>
           <view class="stu_les_pri">
             <text class="stu_les">{{item.student_num?item.student_num:'0'}}人学习{{item.lesson_num?'|':''}}{{item.lesson_num}}课</text>
             <text class="les_price">{{item.price?'￥':''}}{{item.price}}</text>
           </view>
-          <text class="live_time__txt">直播时间：</text>
-          <text class="live_time">{{item.live_time}}</text>
+          <view class="course_time__box live_time__box">
+
+            <text class="course_time__txt live_time__txt">直播时间：</text>
+            <text class="course_time live_time">{{item.live_time}}</text>
+          </view>
         </view>
 
       </navigator>

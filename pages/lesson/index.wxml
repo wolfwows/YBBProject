@@ -1,2 +1,52 @@
 <!--pages/lesson/index.wxml-->
-<text>pages/lesson/index.wxml</text>
+<view class="container">
+  <view class="toptab">
+    <view class="tab_item {{active? '':'active'}}" bindtap="studyLesson">最近学习</view>
+    <view class="tab_item {{active? 'active':''}}" bindtap="paiedLesson">已购课程</view>
+  </view>
+  <view class="section">
+    <view class="section_bd course {{active? 'active':''}}">
+      <navigator wx:for="{{course}}" url="{{item.link}}" hover-class="none" wx:key="item.id" class="course_box live_box">
+        <view class="course_img__box">
+          <image src="{{item.images_url}}" class="course_img"></image>
+          <image class="course_tip__img" src="../../assets/images/{{item.tip}}.png"></image>
+        </view>
+        <view class="course_desc">
+          <text class="course_title">{{item.title}}</text>
+          <text class="tea_des">{{item.teacher}}{{item.teacher_desc?'·':''}}{{item.teacher_desc}}</text>
+          <view class="stu_les_pri">
+            <text class="stu_les">{{item.student_num?item.student_num:'0'}}人学习{{item.lesson_num?'|':''}}{{item.lesson_num}}课</text>
+            <!-- <text class="les_price">{{item.price?'￥':''}}{{item.price}}</text> -->
+          </view>
+          <view class="course_time__box">
+            <text class="course_time__txt lasted_learn">{{item.lasted_learn_time}}分钟前</text>
+            <!-- <text class="course_time lasted_learn">{{item.lasted_learn_time}}分钟前</text> -->
+          </view>
+        </view>
+
+      </navigator>
+    </view>
+    <view class="section_bd course {{active? '':'active'}}">
+      <navigator wx:for="{{course}}" url="{{item.link}}" hover-class="none" wx:key="item.id" class="course_box live_box">
+        <view class="course_img__box">
+          <image src="{{item.images_url}}" class="course_img"></image>
+          <image class="course_tip__img" src="../../assets/images/{{item.tip}}.png"></image>
+        </view>
+        <view class="course_desc">
+          <text class="course_title">{{item.title}}</text>
+          <text class="tea_des">{{item.teacher}}{{item.teacher_desc?'·':''}}{{item.teacher_desc}}</text>
+          <view class="stu_les_pri">
+            <!-- <text class="stu_les">{{item.student_num?item.student_num:'0'}}人学习{{item.lesson_num?'|':''}}{{item.lesson_num}}课</text> -->
+            <text class="les_price">{{item.price?'￥':''}}{{item.price}}</text>
+          </view>
+          <view class="course_time__box">
+
+            <!-- <text class="course_time__txt">直播时间：</text> -->
+            <text class="course_time">{{item.live_time}}</text>
+          </view>
+        </view>
+
+      </navigator>
+    </view>
+  </view>
+</view>

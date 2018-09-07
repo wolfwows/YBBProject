@@ -92,65 +92,11 @@
   font-size: 28rpx;
   color: #919191;
 }
-.live_brand .live_box{
-  padding: 32rpx 20rpx;
-  overflow: hidden;
-  display: flex;
-  position: relative;
-}
-.live_box:not(:last-of-type):after{
-  content: "";
-  height: 1rpx;
-  border-bottom: 1rpx solid #e0e0e0;
-  position: absolute;
-  bottom: 0;
-  left: 20rpx;
-  right: 20rpx;
-}
-.live_img{
-  width: 312rpx;
-  height: 170rpx;
-  border: 1rpx solid #919191;
-}
-.live_desc{
-  flex: 1;
-  padding-left:20rpx;
-}
-.live_title,.tea_des{
-  display: block;
-}
-.live_title{
-  font-size: 34rpx;
-  color: #2e2e2e;
-  font-weight: bold;
-  line-height: 42rpx;
-}
-.tea_des{
-  font-size: 24rpx;
-  color: #959595;
-  line-height: 44rpx;
-}
-.stu_les_pri{
-  line-height: 32rpx;
-}
-.stu_les{
-  font-size: 22rpx;
-  color: #b8b8b8;
-  line-height: 32rpx;
-}
 .les_price{
-  font-size: 26rpx;
-  color: #36becc;
-  line-height: 40rpx;
   float: right;
 }
-.live_time{
-  font-size: 24rpx;
-  color: #fdb045;
-}
-.live_time__txt{
-  font-size: 24rpx;
-  color: #959595;
+.live_time__box{
+  line-height: 32rpx;
 }
 .lesson_brand .section_bd{
   width: 100%;

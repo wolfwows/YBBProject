@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/lesson/index",
     "pages/index/index",
     "pages/ucenter/index/index",
     "pages/logs/logs",
-    "pages/lesson/index",
     "pages/ucenter/signin/index",
     "pages/ucenter/userinfo/index",
     "pages/ucenter/integral/index",

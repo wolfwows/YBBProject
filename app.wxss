@@ -2,5 +2,92 @@
 @import "assets/styles/weui.wxss";
 
 .container {
+/* color: #919191;
+color: #959595;
+color: #b8b8b8;
+background: #f4f4f4;
+color: #4f4f4f;
+color: #e0e0e0;
+background: #33c3db;
+color: #36becc;
+color: #fdb045;
+color: #f85934; */
+}
+.section{
+  background: #f4f4f4;
+  overflow:hidden;
 
+}
+.section_bd{
+  background: #fff;
+}
+.course .course_box{
+  padding: 32rpx 20rpx;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+.course_box:not(:last-of-type):after{
+  content: "";
+  height: 1rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+  position: absolute;
+  bottom: 0;
+  left: 20rpx;
+  right: 20rpx;
+}
+.course_img__box{
+  width: 312rpx;
+  height: 170rpx;
+  position: relative;
+}
+.course_img{
+  width: 312rpx;
+  height: 170rpx;
+  border: 1rpx solid #919191;
+}
+.course_desc{
+  flex: 1;
+  padding-left:20rpx;
+  height: 170rpx;
+  overflow: hidden;
+}
+.course_title,.tea_des{
+  display: block;
+}
+.course_title{
+  font-size: 34rpx;
+  color: #2e2e2e;
+  font-weight: bold;
+  line-height: 42rpx;
+}
+.tea_des{
+  font-size: 24rpx;
+  color: #959595;
+  line-height: 44rpx;
+}
+.stu_les_pri{
+  line-height: 40rpx;
+}
+.stu_les{
+  font-size: 22rpx;
+  color: #b8b8b8;
+  line-height: 40rpx;
+}
+.les_price{
+  font-size: 26rpx;
+  color: #36becc;
+  line-height: 40rpx;
+}
+.course_time__box{
+  line-height: 32rpx;
+  padding:6rpx 0;
+}
+.course_time{
+  font-size: 24rpx;
+  color: #fdb045;
+}
+.course_time__txt{
+  font-size: 24rpx;
+  color: #959595;
 }

@@ -1,1 +1,62 @@
 /* pages/lesson/index.wxss */
+.container{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.toptab{
+  display: flex;
+  margin: 0 20rpx;
+}
+
+.tab_item{
+  flex: 1;
+  text-align: center;
+  font-size: 26rpx;
+  color: #959595;
+  line-height: 36rpx;
+  padding:20rpx 0rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+  transition: 0.4s;
+  position: relative;
+}
+
+.tab_item.active{
+  color: #33c3db;
+}
+.tab_item.active:after{
+  transition: 0.4s;
+}
+.tab_item.active:after{
+  content: "";
+  height: 2rpx;
+  position: absolute;
+  bottom: -1rpx;
+  left: 0;
+  right: 0;
+  border-bottom: 2rpx solid #33c3db;
+}
+.course.active{
+  display: none;
+}
+.course_tip__img{
+  position: absolute;
+  top:-1rpx;
+  right:-4rpx;
+  width: 62rpx;
+  height: 40rpx;
+}
+.tea_des{
+  line-height:46rpx;
+}
+.stu_les{
+  /* display: none; */
+}
+.les_price{
+  /* float: none; */
+  color: #f85934;
+  /* line-height: 32rpx; */
+}
+.lasted_learn{
+  float: right;
+}
