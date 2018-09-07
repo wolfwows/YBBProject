@@ -1,7 +1,10 @@
 {
   "pages": [
+    "pages/coursedetail/index",
     "pages/index/index",
     "pages/lesson/index",
+    "pages/sort/index",
+    "pages/topic/index",
     "pages/ucenter/index/index",
     "pages/ucenter/signin/index",
     "pages/ucenter/userinfo/index",

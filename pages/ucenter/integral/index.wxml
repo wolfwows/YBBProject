@@ -3,7 +3,7 @@
   <view class="section_hd">
     <view class="top_area">
       <text class="title">我的积分</text>
-      <navigator class="inte_detail" url="/pages/integral/integraldetail/index">
+      <navigator class="inte_detail" hover-class="none" url="/pages/ucenter/integraldetail/index">
         <text>积分明细</text>
       </navigator>
     </view>

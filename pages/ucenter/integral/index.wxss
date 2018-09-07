@@ -19,10 +19,11 @@
   display: inline-block;
   right: 20rpx;
   top: 50%;
-  margin-top: -8rpx;
-  font-size: 24rpx;
-  color: #959595;
-  line-height: 24rpx;
+  margin-top:-18rpx;
+  font-size:24rpx;
+  color:#959595;
+  line-height:50rpx;
+
 }
 .content_area{
   background-color: #33c3db;
