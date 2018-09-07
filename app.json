@@ -1,9 +1,8 @@
 {
   "pages": [
-    "pages/lesson/index",
     "pages/index/index",
+    "pages/lesson/index",
     "pages/ucenter/index/index",
-    "pages/logs/logs",
     "pages/ucenter/signin/index",
     "pages/ucenter/userinfo/index",
     "pages/ucenter/integral/index",
@@ -11,6 +10,7 @@
     "pages/ucenter/income/index",
     "pages/ucenter/myorder/index",
     "pages/ucenter/offline/index",
+    "pages/logs/logs",
     "pages/ucenter/qrcode/index"
   ],
   "window": {

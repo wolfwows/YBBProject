@@ -51,20 +51,26 @@ Page({
 	},
 	paiedLesson: function () {
 		var that = this;
-		this.setData({
-			active: !this.data.active
-		})
-		console.log('222')
-		console.log(this.data.active)
+		var active = this.data.active;
+		if (active) {
+			return;
+		} else {
 
+			this.setData({
+				active: !this.data.active
+			})
+		}
 	},
 	studyLesson: function () {
 		var that = this;
-		this.setData({
-			active: !this.data.active
-		})
-		console.log('111')
-		console.log(this.data.active)
+		var active = this.data.active;
+		if (!active) {
+			return;
+		} else {
+			this.setData({
+				active: !this.data.active
+			})
+		}
 	},
 	/**
 	 * 生命周期函数--监听页面加载

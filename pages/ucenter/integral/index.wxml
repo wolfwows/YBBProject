@@ -1,2 +1,56 @@
 <!--pages/ucenter/integral/index.wxml-->
-<text>pages/ucenter/integral/index.wxml</text>
+<view class="container">
+  <view class="section_hd">
+    <view class="top_area">
+      <text class="title">我的积分</text>
+      <navigator class="inte_detail" url="/pages/integral/integraldetail/index">
+        <text>积分明细</text>
+      </navigator>
+    </view>
+    <view class="content_area">
+      <view>
+        <view class="show_integral">
+          <view class="integral">
+            <text class="num">{{integral}}0.00</text>
+            <text class="txt">积分</text>
+          </view>
+          <view class="integral_exchange">积分兑换</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="section_bd">
+    <view class="integral_title">积分攻略</view>
+    <view>
+      <view class="raiders_header">
+        <image src="/assets/images/integral1.png"></image>
+        <text>签到</text>
+        <navigator class="receive" url="#">领取</navigator>
+      </view>
+      <view class="raiders_content">
+        <text>每天签到领积分</text>
+        <text>连续签到{{days}}天，奖励{{reward}}积分</text>
+      </view>
+    </view>
+    <view>
+      <view class="raiders_header">
+        <image src="/assets/images/integral2.png"></image>
+        <text>观看课程</text>
+        <navigator class="receive" url="#">领取</navigator>
+      </view>
+      <view class="raiders_content">
+        <text>收听音频可以获得0积分，观看视频可以获得0积分，积分数根据观看的时长来决定，不满一分钟则不计算（每个音频，视频只能获取一次）</text>
+      </view>
+    </view>
+    <view>
+      <view class="raiders_header">
+        <image src="/assets/images/integral3.png"></image>
+        <text>邀请好友</text>
+        <navigator class="receive" url="#">领取</navigator>
+      </view>
+      <view class="raiders_content">
+        <text>成功邀请一位学员可获得{{reward}}积分</text>
+      </view>
+    </view>
+  </view>
+</view>
