@@ -1,2 +1,20 @@
 <!--pages/ucenter/offline/index.wxml-->
-<text>pages/ucenter/offline/index.wxml</text>
+<view class="container">
+  <view wx:for="{{storeList}}" wx:key="" class="store_info">
+    <view class="store_info__left">
+      <view class="store_name">{{item.store_name}}</view>
+      <view>
+        <image src="/assets/images/phone.png"></image>
+        <text>{{item.host}}:{{item.tel}}</text>
+      </view>
+      <view>
+        <image src="/assets/images/map.png"></image>
+        <text>{{item.addr}}</text>
+      </view>
+    </view>
+    <view class="store_info__right" bindtap="openLocation" data-id="{{item.id}}">
+      <image src="/assets/images/goto.png"></image>
+      <text>{{item.far}}km</text>
+    </view>
+  </view>
+</view>

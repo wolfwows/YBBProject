@@ -1,2 +1,22 @@
 <!--pages/ucenter/integraldetail/index.wxml-->
-<text>pages/ucenter/integraldetail/index.wxml</text>
+<view class="container">
+
+  <view class="toptab">
+    <view class="tab_item {{id==1? 'active':''}}" data-id="1" data-detail="all" bindtap="switchCate">全部</view>
+    <view class="tab_item {{id==2? 'active':''}}" data-id="2" data-detail="income" bindtap="switchCate">收入</view>
+    <view class="tab_item {{id==3? 'active':''}}" data-id="3" data-detail="outlay" bindtap="switchCate">支出</view>
+  </view>
+  <view class="section">
+    <view class="section_bd integral">
+      <view wx:for="{{integralDetailList}}" wx:key="" wx:if="{{detail=='all'?'true':item.detail==detail}}" class="detail_box">
+        <view class="detail_hd">
+          <text>{{item.source}}</text>
+          <text>{{item.detail=='income'?'+':'-'}}{{item.score}}</text>
+        </view>
+        <view class="detail_date">
+          <text>{{item.date}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

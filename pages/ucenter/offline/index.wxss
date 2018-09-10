@@ -1,1 +1,51 @@
 /* pages/ucenter/offline/index.wxss */
+.store_info{
+  height: 170rpx;
+  /* width: 100%; */
+  margin: 0 22rpx;
+  padding: 20rpx 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* box-sizing: border-box; */
+  border-bottom: 1rpx solid #e0e0e0;
+}
+.store_name{
+  font-size: 26rpx;
+  color: #b9b9b9;
+  padding: 16rpx 0rpx 16rpx 8rpx;
+}
+.store_info__left view{
+  line-height: 42rpx;
+}
+.store_info__left image{
+  width: 22rpx;
+  height: 22rpx;
+  padding-right: 8rpx;
+}
+.store_info__left text{
+  font-size: 22rpx;
+  line-height: 22rpx;
+  color: #b9b9b9;
+}
+.store_info__right{
+  width:110rpx;
+  height: 110rpx;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.store_info__right image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.store_info__right text{
+  font-size: 20rpx;
+  color: #4f4f4f;
+  line-height:46rpx;
+
+}

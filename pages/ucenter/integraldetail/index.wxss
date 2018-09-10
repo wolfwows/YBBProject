@@ -1,1 +1,85 @@
 /* pages/ucenter/integraldetail/index.wxss */
+/* pages/lesson/index.wxss */
+.container{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.toptab{
+  display: flex;
+  padding:0 10px;
+}
+
+.no_order.hidden,.order_box.hidden{
+  display: none;
+}
+.no_order{
+  position: absolute;
+  top: 80rpx;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.no_order image{
+  width: 326rpx;
+  height: 200rpx;
+}
+.no_order text{
+  font-size: 26rpx;
+  color: #959595;
+}
+
+.tab_item{
+  flex: 1;
+  text-align: center;
+  font-size: 26rpx;
+  color: #959595;
+  line-height: 36rpx;
+  padding:20rpx 0rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+  transition: 0.4s;
+  position: relative;
+}
+
+.tab_item.active{
+  color: #33c3db;
+}
+.tab_item.active:after{
+  transition: 0.4s;
+}
+.tab_item.active:after{
+  content: "";
+  height: 2rpx;
+  position: absolute;
+  bottom: -1rpx;
+  left: 0;
+  right: 0;
+  border-bottom: 2rpx solid #33c3db;
+}
+.section{
+  background: #fff;
+}
+
+.integral{
+  margin: 20rpx;
+}
+.detail_box{
+
+  border-bottom: 1rpx dashed #e0e0e0;
+}
+.detail_hd{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  color: #4f4f4f;
+  padding: 20rpx 0 0 0 ;
+}
+.detail_date{
+  color: #919191;
+  font-size: 24rpx;
+  padding: 14rpx 0;
+}

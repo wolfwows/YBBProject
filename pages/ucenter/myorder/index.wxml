@@ -1,2 +1,54 @@
 <!--pages/ucenter/myorder/index.wxml-->
-<text>pages/ucenter/myorder/index.wxml</text>
+<view class="container">
+
+  <view class="toptab">
+    <view class="tab_item {{id==1? 'active':''}}" data-id="1" data-ispayed="null" bindtap="switchCate">全部</view>
+    <view class="tab_item {{id==2? 'active':''}}" data-id="2" data-ispayed="true" bindtap="switchCate">待付款</view>
+    <view class="tab_item {{id==3? 'active':''}}" data-id="3" data-ispayed="false" bindtap="switchCate">已付款</view>
+  </view>
+  <view class="section">
+
+    <view class="section_bd course">
+      <view class="no_order {{show?'':'hidden'}}">
+        <image src="/assets/images/noorder.png"></image>
+        <text>没有记录哦~o(╯□╰)o</text>
+      </view>
+      <view wx:for="{{course}}" wx:if="{{ispayed=='null'?'true':item.ispayed==ispayed}}" wx:key="item.id" class="order_box {{show?'hidden':''}}">
+        <view class="order_detail">
+          <text>订单号：{{item.order_code}}</text>
+          <text>下单时间：{{item.order_time}}</text>
+        </view>
+        <navigator url="{{item.link}}" hover-class="none" class="course_box">
+          <view class="course_img__box">
+            <image src="{{item.images_url}}" class="course_img"></image>
+            <image class="course_tip__img" src="/assets/images/{{item.tip}}.png"></image>
+          </view>
+          <view class="course_desc">
+            <text class="course_title">{{item.title}}</text>
+            <text class="tea_des">{{item.teacher}}{{item.teacher_desc?'·':''}}{{item.teacher_desc}}</text>
+            <view class="stu_les_pri">
+              <text class="stu_les">{{item.student_num?item.student_num:'0'}}人学习{{item.lesson_num?'|':''}}{{item.lesson_num}}课</text>
+              <!-- <text class="les_price">{{item.price?'￥':''}}{{item.price}}</text> -->
+            </view>
+            <view class="course_time__box">
+              <text class="course_time__txt lasted_learn">{{item.lasted_learn_time}}分钟前</text>
+              <!-- <text class="course_time lasted_learn">{{item.lasted_learn_time}}分钟前</text> -->
+            </view>
+          </view>
+        </navigator>
+        <view class="conform_box">
+          <view class="user_integral">
+            <text>积分：</text>
+            <text class="user_integral_count">{{item.integral}}</text>
+          </view>
+          <view wx:if="{{item.ispayed=='false'}}" class="conform_btn btn refund">申请退款</view>
+          <view wx:if="{{item.ispayed=='true'}}" class="conform_btn">
+            <view class="btn cancel">取消订单</view>
+            <view class="btn confirm">立即支付</view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>

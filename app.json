@@ -1,18 +1,19 @@
 {
   "pages": [
-    "pages/coursedetail/index",
     "pages/index/index",
     "pages/lesson/index",
     "pages/sort/index",
     "pages/topic/index",
+    "pages/coursedetail/index",
     "pages/ucenter/index/index",
     "pages/ucenter/signin/index",
     "pages/ucenter/userinfo/index",
     "pages/ucenter/integral/index",
+    "pages/ucenter/integraldetail/index",    
     "pages/ucenter/upmember/index",
     "pages/ucenter/income/index",
     "pages/ucenter/myorder/index",
-    "pages/ucenter/offline/index",
+    "pages/ucenter/offline/index",    
     "pages/logs/logs",
     "pages/ucenter/qrcode/index"
   ],

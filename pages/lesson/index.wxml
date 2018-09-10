@@ -9,7 +9,7 @@
       <navigator wx:for="{{course}}" url="{{item.link}}" hover-class="none" wx:key="item.id" class="course_box live_box">
         <view class="course_img__box">
           <image src="{{item.images_url}}" class="course_img"></image>
-          <image class="course_tip__img" src="../../assets/images/{{item.tip}}.png"></image>
+          <image class="course_tip__img" src="/assets/images/{{item.tip}}.png"></image>
         </view>
         <view class="course_desc">
           <text class="course_title">{{item.title}}</text>
@@ -30,7 +30,7 @@
       <navigator wx:for="{{course}}" url="{{item.link}}" hover-class="none" wx:key="item.id" class="course_box live_box">
         <view class="course_img__box">
           <image src="{{item.images_url}}" class="course_img"></image>
-          <image class="course_tip__img" src="../../assets/images/{{item.tip}}.png"></image>
+          <image class="course_tip__img" src="/assets/images/{{item.tip}}.png"></image>
         </view>
         <view class="course_desc">
           <text class="course_title">{{item.title}}</text>

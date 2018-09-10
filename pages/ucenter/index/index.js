@@ -15,7 +15,7 @@ Page({
 		items: [{
 			icon: '../../../assets/images/icon-order.png',
 			text: '我的订单',
-			path: '/pages/ucenter/order/index'
+			path: '/pages/ucenter/myorder/index'
     }, {
 			icon: '../../../assets/images/icon-offline.png',
 			text: '线下网点',
