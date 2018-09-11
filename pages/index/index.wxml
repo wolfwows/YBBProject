@@ -3,7 +3,7 @@
   <swiper class="swiper_box" indicator-dots="true" indicator-color="#959595" indicator-active-color="#33c3db" autoplay="true" interval="3000" duration="1000" circular="true">
     <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}">
       <navigator url="{{item.link}}">
-        <image class="slider_img" src="{{item.image_url}}"></image>
+        <image class="slider_img" src="{{item.imgUrl}}"></image>
       </navigator>
     </swiper-item>
   </swiper>
@@ -20,20 +20,20 @@
       </navigator>
     </view>
     <view class="section_bd course">
-      <navigator wx:for="{{live}}" url="{{item.link}}" hover-class="none" wx:key="item.id" class="course_box live_box">
+      <navigator wx:for="{{liveLessons.rows}}" url="{{item.link}}" hover-class="none" wx:key="item.id" class="course_box live_box">
 
-        <image src="{{item.images_url}}" class="course_img"></image>
+        <image src="{{item.imgUrl}}" class="course_img"></image>
         <view class="course_desc">
-          <text class="course_title">{{item.title}}</text>
-          <text class="tea_des">{{item.teacher}}{{item.teacher_desc?'·':''}}{{item.teacher_desc}}</text>
+          <text class="course_title">{{item.courseName}}</text>
+          <text class="tea_des">{{item.teacher?item.teacher:'佚名'}}{{item.teacher_desc?'·':''}}{{item.teacher_desc}}</text>
           <view class="stu_les_pri">
-            <text class="stu_les">{{item.student_num?item.student_num:'0'}}人学习{{item.lesson_num?'|':''}}{{item.lesson_num}}课</text>
-            <text class="les_price">{{item.price?'￥':''}}{{item.price}}</text>
+            <text class="stu_les">{{item.saleCount}}人学习{{item.courseType?'|'+item.courseType+'课':''}}</text>
+            <text class="les_price">{{item.salePrice!=0?'￥'+item.salePrice:'免费'}}</text>
           </view>
           <view class="course_time__box live_time__box">
 
             <text class="course_time__txt live_time__txt">直播时间：</text>
-            <text class="course_time live_time">{{item.live_time}}</text>
+            <text class="course_time live_time">{{item.updateDate}}</text>
           </view>
         </view>
 

@@ -1,22 +1,29 @@
+const util = require('../../utils/util.js');
+const api = require('../../config/api.js');
+const user = require('../../services/user.js');
+
 //index.js
 //获取应用实例
 const app = getApp()
 
 Page({
 	data: {
-		banner: [{
-			id: 0,
-			link: '/pages/lesson/index',
-			image_url: '/assets/images/banner1.jpg'
-		}, {
-			id: 1,
-			link: '/pages/lesson/index',
-			image_url: '/assets/images/banner2.jpg'
-		}, {
-			id: 2,
-			link: '/pages/lesson/index',
-			image_url: '/assets/images/banner3.jpg'
-		}],
+		swiperImgList: [],
+		banner: [],
+		liveLessons: [],
+		// banner: [{
+		// 	id: 0,
+		// 	link: '/pages/lesson/index',
+		// 	image_url: '/assets/images/banner1.jpg'
+		// }, {
+		// 	id: 1,
+		// 	link: '/pages/lesson/index',
+		// 	image_url: '/assets/images/banner2.jpg'
+		// }, {
+		// 	id: 2,
+		// 	link: '/pages/lesson/index',
+		// 	image_url: '/assets/images/banner3.jpg'
+		// }],
 		channel: [{
 			id: 0,
 			link: '/pages/lesson/index',
@@ -33,40 +40,40 @@ Page({
 			icon_url: '/assets/images/channel3.png',
 			name: '会员'
 		}],
-		live: [{
-			id: 0,
-			link: '/pages/lesson/index',
-			images_url: '/assets/images/live1.png',
-			title: '幼儿英语训练班',
-			teacher: '黄铮',
-			teacher_desc: '全脑教育金牌讲师',
-			student_num: '152',
-			lesson_num: '9',
-			price: 48,
-			live_time: '7/26  10:25'
-		}, {
-			id: 0,
-			link: '/pages/lesson/index',
-			images_url: '/assets/images/live1.png',
-			title: '幼儿英语训练班',
-			teacher: '黄铮',
-			teacher_desc: '全脑教育金牌讲师',
-			student_num: '152',
-			lesson_num: '9',
-			price: 48,
-			live_time: '7/26  10:25'
-		}, {
-			id: 0,
-			link: '/pages/lesson/index',
-			images_url: '/assets/images/live1.png',
-			title: '幼儿英语训练班',
-			teacher: '黄铮',
-			teacher_desc: '全脑教育金牌讲师',
-			student_num: '152',
-			lesson_num: '9',
-			price: 48,
-			live_time: '7/26  10:25'
-		}],
+		// live: [{
+		// 	id: 0,
+		// 	link: '/pages/lesson/index',
+		// 	images_url: '/assets/images/live1.png',
+		// 	title: '幼儿英语训练班',
+		// 	teacher: '黄铮',
+		// 	teacher_desc: '全脑教育金牌讲师',
+		// 	student_num: '152',
+		// 	lesson_num: '9',
+		// 	price: 48,
+		// 	live_time: '7/26  10:25'
+		// }, {
+		// 	id: 0,
+		// 	link: '/pages/lesson/index',
+		// 	images_url: '/assets/images/live1.png',
+		// 	title: '幼儿英语训练班',
+		// 	teacher: '黄铮',
+		// 	teacher_desc: '全脑教育金牌讲师',
+		// 	student_num: '152',
+		// 	lesson_num: '9',
+		// 	price: 48,
+		// 	live_time: '7/26  10:25'
+		// }, {
+		// 	id: 0,
+		// 	link: '/pages/lesson/index',
+		// 	images_url: '/assets/images/live1.png',
+		// 	title: '幼儿英语训练班',
+		// 	teacher: '黄铮',
+		// 	teacher_desc: '全脑教育金牌讲师',
+		// 	student_num: '152',
+		// 	lesson_num: '9',
+		// 	price: 48,
+		// 	live_time: '7/26  10:25'
+		// }],
 		lesson: [{
 			id: 0,
 			link: '/pages/lesson/index',
@@ -102,9 +109,54 @@ Page({
 		}]
 	},
 	//事件处理函数
+	getIndexData: function () {
+		let that = this;
+		util.request(api.Banner).then(function (res) {
+			if (res.errno !== 0) {
+				that.setData({
+					banner: res.result,
+					// liveLessons: res.data.liveLessonList,
+					// recommendLessons: res.data.recommendLessonList,
+				})
+			}
+		})
+		util.request(api.liveLessonList).then(function (res) {
 
-	onLoad: function () {
-
+			if (res.errno !== 0) {
+				console.log(res.result);
+				that.setData({
+					// banner: res.result,
+					liveLessons: res.result,
+					// recommendLessons: res.data.recommendLessonList,
+				})
+			}
+		})
+		util.request(api.Banner).then(function (res) {
+			if (res.errno !== 0) {
+				that.setData({
+					banner: res.result,
+					// liveLessons: res.data.liveLessonList,
+					// recommendLessons: res.data.recommendLessonList,
+				})
+			}
+		})
+	},
+	onLoad: function (options) {
+		var that = this;
+		if (options.id) {
+			that.setData({
+				id: parseInt(options.id)
+			})
+		}
+		wx.getSystemInfo({
+			success: function (res) {
+				console.log(res.windowHeight);
+				// that.setData({
+				// 	scrollHeight:res.windowHeight
+				// })
+			}
+		})
+		this.getIndexData();
 	},
 
 })
