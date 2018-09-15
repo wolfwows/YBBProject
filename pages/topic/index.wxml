@@ -1,2 +1,6 @@
 <!--pages/subject/index.wxml-->
-<text>pages/subject/index.wxml</text>
+<view class="container">
+  <navigator class="topic-item" wx:for="{{topicList.rows}}" wx:key="" hover-class="none">
+    <image src="{{item.imgUrl}}"></image>
+  </navigator>
+</view>

@@ -1,10 +1,39 @@
 <!--pages/sort/index.wxml-->
 <view class="container">
-  <view class="cate-nav">
-    <scroll-view scroll-x="true" class="cate-nav-body" scroll-left="0">
-      <view wx:for="{{navList}}" class="item {{ id == item.id ? 'active' : ''}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCate">
-        <view class="name">{{item.name}}</view>
-      </view>
-    </scroll-view>
+  <view class="cate_nav">
+    <view class="cate_left">
+      <text>全部</text>
+      <text>类型</text>
+    </view>
+    <view class="cate_right">
+      <scroll-view scroll-x="true" class="cate_item" scroll-left="0">
+        <text wx:for="{{playType}}" class="item {{ id == item.id ? 'active' : ''}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCate" wx:key="" class="name">{{item.name}}</text>
+      </scroll-view>
+      <scroll-view scroll-x="true" class="cate_item" scroll-left="0">
+        <text wx:for="{{subject}}" class="item {{ id == item.id ? 'active' : ''}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCate" wx:key="" class="name">{{item.name}}</text>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="cate_bd">
+    <view class="section_bd course">
+      <navigator wx:for="{{liveLessons.rows}}" url="{{item.link}}" hover-class="none" wx:key="item.id" class="course_box live_box">
+
+        <image src="{{item.imgUrl}}" class="course_img"></image>
+        <view class="course_desc">
+          <text class="course_title">{{item.courseName}}</text>
+          <text class="tea_des">{{item.teacher?item.teacher:'佚名'}}{{item.teacher_desc?'·':''}}{{item.teacher_desc}}</text>
+          <view class="stu_les_pri">
+            <text class="stu_les">{{item.saleCount}}人学习{{item.courseType?'|'+item.courseType+'课':''}}</text>
+            <text class="les_price">{{item.salePrice!=0?'￥'+item.salePrice:'免费'}}</text>
+          </view>
+          <view class="course_time__box live_time__box">
+
+            <text class="course_time__txt live_time__txt">直播时间：</text>
+            <text class="course_time live_time">{{item.updateDate}}</text>
+          </view>
+        </view>
+
+      </navigator>
+    </view>
   </view>
 </view>

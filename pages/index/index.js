@@ -26,12 +26,12 @@ Page({
 		// }],
 		channel: [{
 			id: 0,
-			link: '/pages/lesson/index',
+			link: '/pages/topic/index',
 			icon_url: '/assets/images/channel1.png',
 			name: '专题'
 			}, {
 			id: 1,
-			link: '/pages/lesson/index',
+			link: '/pages/sort/index',
 			icon_url: '/assets/images/channel2.png',
 			name: '分类'
 			}, {
@@ -120,7 +120,7 @@ Page({
 				})
 			}
 		})
-		util.request(api.liveLessonList).then(function (res) {
+		util.request(api.LiveLessonList).then(function (res) {
 
 			if (res.errno !== 0) {
 				console.log(res.result);

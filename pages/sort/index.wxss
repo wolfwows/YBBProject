@@ -1,1 +1,34 @@
 /* pages/sort/index.wxss */
+.cate_nav{
+  display: flex;
+  flex-direction: row;
+}
+.cate_left{
+
+  width: 124rpx;
+  height: 124rpx;
+  padding: 14rpx 0;
+  box-sizing: border-box;
+}
+.cate_left text{
+  display: block;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  line-height: 48rpx;
+}
+.cate_right{
+
+}
+.cate_item{
+  line-height: 30rpx;
+  padding: 16rpx 0 0 0;
+}
+.name{
+  font-size: 26rpx;
+  color: #959595;
+  display: inline-block;
+  padding: 0 20rpx 0 0;
+  line-height: 30rpx;
+}

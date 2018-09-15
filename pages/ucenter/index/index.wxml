@@ -1,7 +1,7 @@
 <!--pages/ucenter/index/index.wxml-->
 <view class="container">
   <view class="userinfo" bindtap="bindViewTap">
-    <text class="user_sign">签到</text>
+    <navigator url="/pages/ucenter/signin/index" class="user_sign">签到</navigator>
     <view class="userinfo_avatar">
       <image class="userinfo_avatar__inner__bg" src="../../../assets/images/avatar_bg.png" mode="cover"></image>
       <image class="userinfo_avatar__inner" src="{{userInfo.avatarUrl}}" mode="cover"></image>

@@ -2,8 +2,8 @@ const ApiRootUrl = 'http://192.168.1.123/api/mp/';
 // http: //192.168.1.122/api/mp/getBroadCastPicList.html?venderId=0a607c80722e4b209d6d6645ed917cb6
 module.exports = {
 	Banner: ApiRootUrl + 'getBroadCastPicList.html?venderId=0a607c80722e4b209d6d6645ed917cb6', //首页数据接口
-	liveLessonList: ApiRootUrl + 'getCoursesList.html?venderId=0a607c80722e4b209d6d6645ed917cb6&courseType=20&isInitPage=true&pageNumber=1', //分类目录全部分类数据接口
-	//   CatalogCurrent: ApiRootUrl + 'catalog/current',  //分类目录当前分类数据接口
+	LiveLessonList: ApiRootUrl + 'getCoursesList.html?venderId=0a607c80722e4b209d6d6645ed917cb6&courseType=20&isInitPage=true&pageNumber=1', //分类目录全部分类数据接口
+	TopicList: ApiRootUrl + 'getSpecialCourses.html?venderId=0a607c80722e4b209d6d6645ed917cb6&isInitPage=true&pageNumber=1', //分类目录当前分类数据接口
 	//
 	//   AuthLoginByWeixin: ApiRootUrl + 'auth/loginByWeixin', //微信登录
 	//

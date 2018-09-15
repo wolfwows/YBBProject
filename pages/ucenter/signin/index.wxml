@@ -1,2 +1,68 @@
 <!--pages/ucenter/signin/index.wxml-->
-<text>pages/ucenter/signin/index.wxml</text>
+<view class="container">
+  <view class="shadow_con {{hidden}}" wx:if="{{active}}" bindtap="hidden">
+    <image src="/assets/images/sign_shadow.png"></image>
+  </view>
+  <view class="section_hd">
+    <view class="top_area">
+      <text class="title">我的积分</text>
+      <navigator class="inte_detail" hover-class="none" url="/pages/ucenter/integraldetail/index">
+        <text>积分明细</text>
+      </navigator>
+    </view>
+    <view class="signin_box">
+      <text class="signin_btn no_sign" bindtap="signIn" wx:if="{{!active}}">签到</text>
+      <text class="signin_btn is_sign" wx:else>已签到</text>
+      <view class="signin_desc">
+        <text>连续签到 </text>
+        <text class="sigin_day">{{}}0</text>
+        <text> 天奖励 </text>
+        <text class="signin_int">{{}}0</text>
+        <text> 积分</text>
+      </view>
+    </view>
+  </view>
+  <view class="calendar calendar-style">
+    <!--主标题-->
+    <view class="calendar-header header-style" wx:if="{{header}}">
+      <text wx:if="{{year == min_year && month == min_month}}"></text>
+      <text class="cwj-icon cwj-calendar-icon-left" bindtap="prevMonth" wx:elif="{{prev}}"></text>
+      <text wx:else></text>
+
+      <picker mode="date" value="{{year}}-{{month}}" start="{{startDate}}" end="{{endDate}}" bindchange="dateChange" fields="month">
+        <text>{{year.value}}年{{month.value}}月</text>
+      </picker>
+
+      <text wx:if="{{year == max_year && month == max_month}}"></text>
+      <text class="cwj-icon cwj-calendar-icon-right" bindtap="nextMonth" wx:elif="{{next}}"></text>
+      <text wx:else></text>
+    </view>
+
+    <!--日历面板-->
+    <view class="calendar-board board-style">
+      <!--周标题-->
+      <view class="calendar-weeks" wx:if="{{weeks.value && weeksType.weekTitle.length == 7}}">
+        <text class="calendar-weekday" wx:for="{{weeksType.weekTitle}}" wx:key="">{{item}}</text>
+      </view>
+
+      <!--日期-->
+      <view class="calendar-days">
+        <block wx:for="{{days_array}}" wx:for-item="item" wx:key="" wx:for-index="i">
+          <!--日期行-->
+          <view class="calendar-row">
+            <block wx:for="{{days_array[i]}}" wx:for-item="days" wx:key="">
+              <view class="calendar-cell" style="background: {{day.background}}; width: {{cellSize.value}}px; height: {{cellSize.value}}px;" wx:if="{{days.day <= 0}}"></view>
+
+              <view class="calendar-cell cell-rounded {{days.day==day.value && !active ? 'istoday':''}} {{days.day==day.value && active?'active':''}}" style="background: {{days.background}}; width: {{cellSize.value}}px; height: {{cellSize.value}}px;"
+                wx:else bindtap="dayClick" data-day="{{days.day}}">
+                <block>
+                  <text class="calendar-day" style="color: {{days.color}};">{{days.day}}</text>
+                </block>
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

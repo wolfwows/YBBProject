@@ -25,7 +25,7 @@
       <view class="raiders_header">
         <image src="/assets/images/integral1.png"></image>
         <text>签到</text>
-        <navigator class="receive" url="#">领取</navigator>
+        <navigator class="receive" url="/pages/ucenter/signin/index">领取</navigator>
       </view>
       <view class="raiders_content">
         <text>每天签到领积分</text>

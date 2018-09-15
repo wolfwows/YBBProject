@@ -152,6 +152,7 @@ function redirect(url) {
 }
 module.exports = {
 	formatTime,
+	formatLocation,
 	request,
 	redirect,
 	checkSession,
